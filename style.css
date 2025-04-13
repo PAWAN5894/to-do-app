@@ -1,0 +1,193 @@
+/* style.css */
+
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4; /* Light grey page background */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align container to the top */
+    min-height: 100vh;
+    transition: background-color 0.2s ease-in-out;
+}
+.body-flas{
+    background-color: #3e08e0;
+}
+.container {
+    background-color: #fff; /* White container background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 100%;
+    max-width: 500px; /* Limit container width */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 0; /* Remove default top margin */
+    margin-bottom: 20px;
+}
+
+/* Form styling for adding tasks */
+#task-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#task-input {
+    flex-grow: 1; /* Take available space */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px; /* Rounded left corners */
+    font-size: 16px;
+}
+
+#task-input:focus {
+     outline: none;
+     border-color: #0275d8; /* Highlight border on focus */
+}
+
+
+#add-task-btn {
+    padding: 10px 15px;
+    background-color: #5cb85c; /* Green */
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0; /* Rounded right corners */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+#add-task-btn:hover {
+    background-color: #4cae4c; /* Darker green on hover */
+}
+
+/* Filter buttons styling */
+.filter-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-btn.active { /* Style for the currently active filter */
+    background-color: #0275d8; /* Blue */
+    color: white;
+    border-color: #0275d8;
+}
+
+.filter-btn:hover:not(.active) { /* Hover style for non-active buttons */
+    background-color: #eee;
+}
+
+/* Task list styling */
+#task-list {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px; /* Space before clear button */
+}
+
+/* Individual task item styling */
+#task-list li {
+    background-color: #f9f9f9; /* Slightly off-white base background */
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    border: 1px solid #eee; /* Subtle border */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease; /* Smooth background transition */
+}
+
+/* --- Style for COMPLETED tasks --- */
+#task-list li.completed {
+    background-color: #e6e6e6; /* Light grey background for completed tasks */
+    border-color: #ddd;
+}
+
+/* Style for the text span within a completed task */
+#task-list li.completed span.task-text {
+    text-decoration: line-through;
+    color: #777; /* Grey out text */
+}
+
+/* Style for the task text span */
+#task-list li span.task-text {
+    flex-grow: 1;
+    margin-right: 10px; /* Space between text and buttons */
+    cursor: pointer; /* Indicate text is clickable for completion */
+    word-break: break-word; /* Prevent long words from overflowing */
+    color: #333; /* Default text color */
+}
+
+/* Container for the action buttons within a task item */
+.task-buttons {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+/* Styling for individual action buttons */
+.task-buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px; /* Slightly larger icons */
+    padding: 5px;
+    margin-left: 8px; /* Space between buttons */
+    line-height: 1; /* Ensure consistent vertical alignment */
+    transition: transform 0.1s ease; /* Add subtle press effect */
+}
+
+.task-buttons button:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.task-buttons .complete-btn {
+    color: #5cb85c; /* Green checkmark */
+}
+#task-list li.completed .complete-btn {
+     color: #f0ad4e; /* Change checkmark color when completed (e.g., orange) */
+}
+
+.task-buttons .delete-btn {
+    color: #d9534f; /* Red cross */
+}
+
+/* Class to hide tasks for filtering */
+#task-list li.hidden {
+    display: none;
+}
+
+/* Clear completed button styling */
+#clear-completed-btn {
+    display: block; /* Make it take full width */
+    width: 100%;
+    padding: 10px;
+    background-color: #d9534f; /* Red */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+    margin-top: 15px; /* Space above the button */
+}
+
+#clear-completed-btn:hover {
+    background-color: #c9302c; /* Darker red on hover */
+}
